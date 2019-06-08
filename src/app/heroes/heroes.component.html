@@ -1,0 +1,36 @@
+<div class="child_component">
+  <h2>Child component</h2>
+  <div>
+    <h3>Importing a single Hero with [(ngModel)] for two-way binding</h3>
+    <p>Type your favorite hero name below</p>
+
+    <input [(ngModel)]="hero.name" placeholder="name" />
+
+    <p>ID: {{hero.id}} NAME: {{hero.name | uppercase}}</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h3>A list of hard-coded heroes *ngFor iteration</h3>
+    <ul>
+      <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">{{hero.id}} {{hero.name}}</li>
+    </ul>
+  </div>
+</div>
+
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+
+<!-- This was moved to its own component -->
+<!-- <div *ngIf="selectedHero">
+  <h3>Detailed hero information displayed using *ngIf.  Select a hero from the list above</h3>
+  <h2>ID: {{selectedHero.id}} {{selectedHero.name | uppercase}}</h2>
+  
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name" />
+    </label>
+  </div>
+</div> -->

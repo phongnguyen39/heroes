@@ -1,0 +1,6 @@
+li{
+    font-style: italic;
+}
+li:hover{
+    font-size: 25px;
+    background: slategrey;}
